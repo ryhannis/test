@@ -17,17 +17,8 @@ get_header();
 <?php get_template_part( 'template-parts/content-landing' ); ?>
 	<!-- TEXT CONTENT -->
 	<?php get_template_part( 'template-parts/content-bodycopy' ); ?>
-
-	<!-- <header class="entry-header"> -->
-		
-	<!-- </header>.entry-header -->
-
-	<div class="entry-content tc w-100" style="<?php 
-nice_background('hero_image'); ?>">test
-		<a data-image="">
-			
-		</a>
-	</div>
+	<?php get_template_part( 'template-parts/content-image-gallery' ); ?>
+	
 
 	<footer class="entry-footer">
 		<?php //inventive_ventures_entry_footer(); ?>

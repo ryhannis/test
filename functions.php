@@ -192,3 +192,4 @@ function your_themes_pagination(){
     echo paginate_links();
 }
 
+

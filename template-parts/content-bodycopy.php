@@ -1,3 +1,4 @@
+<section class="hero-copy">
 <div class="hero-content flex justify-between flex-column items-center tc h-100 w-70">
 
 	<div class="cs-heading">
@@ -24,3 +25,4 @@ if( $link ):
 <?php endif; ?>
 
 </div>
+</section>

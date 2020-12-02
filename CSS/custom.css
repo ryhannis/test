@@ -4,6 +4,8 @@ body {
     font-family: aktiv-grotesk-extended, sans-serif;
     font-weight: 700;
     font-style: normal;
+
+    
 }
 
 a {
@@ -11,6 +13,9 @@ a {
     color:#716C6C;
 }
 
+.logo {
+max-width: 120px !important;
+}
 
 .hover{
     position: relative;
@@ -27,6 +32,14 @@ a {
     transition: all 0.15s ease-in-out;
   }
   
+
+  section,
+  .gallery-image,
+  .image-contain  {
+      position:sticky;
+      position:-webkit-sticky;
+      top:0;
+  }
   
   .hover:hover:before {
     visibility: visible;
@@ -35,13 +48,39 @@ a {
     margin-left:auto;
   }
 
-
+  .hero-copy {
+      background-color: #fcfcfc;
+      width:100vw;
+      height:100vh;
+  }
+ 
 .hero-image {
     min-height:100vh;
     position:sticky;
-    position: -webkit-sticky;
+    position:-webkit-sticky;
     top:0;
 }
+.gallery-image {
+height:100vh;
+background-color: #fcfcfc;
+}
+
+.gallery-image img {
+    width: -webkit-fill-available;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+}
+
+.image-contain {
+    height:100%;
+}
+
+.post-gallery {
+    min-height:100vh;
+    width:100vw;
+}
+
 
 .hero-image-logo {
     min-height:15vh;
@@ -55,13 +94,14 @@ a {
 }
 
 .hero-content {
-    margin-top:7rem;
-    margin-bottom:7rem;
+    padding-top:7rem;
+    padding-bottom:7rem;
     margin-right:auto;
     margin-left:auto;
     color:#716C6C;
-    min-height:70vh;
-    max-height:100vh;   
+    min-height:80vh;
+    max-height:100vh; 
+    background-color: #fcfcfc;  
 }
 
 
@@ -74,7 +114,7 @@ a {
 }
 
 .case-title {
-    font-weight: 500;
+    font-weight: 400;
     font-size:1.2rem;
 }
 
@@ -85,10 +125,11 @@ a {
 
 .case-copy {
     color:#716C6C;
-    font-weight: 700;
+    font-weight: 200;
     font-size:1.5rem;
     margin-right:auto;
     margin-left:auto;
+    text-transform: inherit;
     
 }
 
@@ -136,7 +177,7 @@ ul {
 .main-navigation {
     width:100vw;
     height:60vh;
-    background-color:black;
+    background-color:#101010;
     color:white;
     display:flex;
     z-index:40;
@@ -213,6 +254,9 @@ display:flex;
     margin:auto;
 }
 
+
+/* ----------------------------Page Pagination------------------------------- */
+
 .prev,
 .next {
     width: 64px;
@@ -240,4 +284,111 @@ display:flex;
     width:50%;
     background-size:contain;
     margin:auto;
+}
+
+.menu-overlay {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events:auto;
+    background-size: cover;
+  }
+
+  .post-link:hover {
+      color:white;
+  }
+
+  .nav-toggle .cls-1 {
+      color:white !important;
+      stroke:none !important;
+      stroke-width:0 !important;
+      fill:white !important;
+  }
+
+
+  /* ----------------------------Home Image Slider------------------------------- */
+
+
+
+  .slider {
+      height:50vh !important;
+      width:fit-content;
+      display:flex;
+      margin:0;
+      padding:0;
+  }
+
+  .slider li {
+      display: inline;
+  }
+
+  .sliderimage {
+      display:flex;
+      margin:none;
+      padding:none;
+
+  }
+
+  .slider-items {
+      display: inline;
+      margin: 0;
+      padding: 0;
+  }
+
+  .slider-item {
+      margin: 0;
+      padding: 0;
+      width:30vw;
+  }
+
+  .create {
+      position:fixed;
+      width: 100vw;
+      height: 50vh;
+  }
+  .create p {
+    top: 25%;
+    margin-top: 25vh;
+    transform: translateY(-50%);
+  }
+  
+  /* ---------------------------------------Media Queries------------------------------------------------- */
+
+@media (max-width:480px) {
+    .slider-item {
+        width:80vw;
+    }
+
+    h1 {
+        font-size:1.2em;
+    }
+    .case-copy {
+        font-size:1rem;
+    }
+
+    .prev,
+    .next {
+        width:36px;
+        height:36px;
+    }
+/* --------------------------------Images to fit to Full size on Mobile ---------------------------------------*/
+    .gallery-image {
+        height:auto;
+        background-color: #fcfcfc;
+        }
+        
+        .gallery-image img {
+            width: auto;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .image-contain {
+            height:auto;
+        }
+        
+        .post-gallery {
+            min-height:100vh;
+            width:100vw;
+        }
 }

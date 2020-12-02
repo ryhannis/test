@@ -1,5 +1,6 @@
 const toggleTag = document.querySelector("a.nav-toggle")
 const navTag = document.querySelector(".main-navigation")
+const logoTag = document.querySelector("a.logo")
 
 toggleTag.addEventListener("click", function () {
 
@@ -7,12 +8,23 @@ navTag.classList.toggle("open")
 
 if (navTag.classList.contains("open")) {
   toggleTag.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.55 44.55"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="44.55 4.24 40.3 0 22.27 18.03 4.24 0 0 4.24 18.03 22.27 0 40.3 4.24 44.55 22.27 26.52 40.3 44.55 44.55 40.3 26.52 22.27 44.55 4.24"/></g></g></svg>'
+  logoTag.innerHTML = '<img src="http://inventive-ventures.local/wp-content/themes/inventive-ventures/images/inventive_ventures_logo_white.gif">'
 } else {
   toggleTag.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 32"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Group_121" data-name="Group 121"><rect id="Rectangle_700" data-name="Rectangle 700" width="57" height="6"/><rect id="Rectangle_701" data-name="Rectangle 701" y="13" width="57" height="6"/><rect id="Rectangle_702" data-name="Rectangle 702" y="26" width="57" height="6"/></g></g></g></svg>'
+  logoTag.innerHTML = '<img src="http://inventive-ventures.local/wp-content/themes/inventive-ventures/images/inventive_ventures_logo_black.gif">'
 }
 });
 
-
+const menuContainer = document.querySelector(".menu-overlay")
+const postUrls = document.querySelectorAll(".post-link");
+postUrls.forEach(postUrl => {
+  postUrl.addEventListener("mouseover", function () {
+    // get the value of the hero image URL from the data-image attribute
+    const backgroundImageSrc =  postUrl.getAttribute("data-image");
+    // change the background image to the hero image pulled
+    menuContainer.style.backgroundImage = `url('${backgroundImageSrc}')`;
+  })
+})
 
 Barba.Dispatcher.on('transitionCompleted', function() {
   toggleNav();

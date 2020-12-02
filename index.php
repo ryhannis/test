@@ -12,6 +12,8 @@
  * @package Inventive_Ventures
  */
 
+ 
+
 get_header(); 
 
 
@@ -19,6 +21,21 @@ get_header();
 get_template_part( 'template-parts/content-about' );
 ?>
 
-<?php get_template_part( 'template-parts/content-landing' ); ?>
+<ul class="slider">
+    <?php $args = array(
+      'posts_per_page'   => -1,
+	  'post_type'        => 'post',
+	  'orderby'=> 'title',
+	  'order' => 'ASC'
+    );
+    $loop = new WP_Query( $args ); 
+    if ($loop->have_posts() ) : while ($loop->have_posts() ) : $loop->the_post(); 
+      get_template_part( 'template-parts/content-slider' );
+      
+     endwhile; endif; ?>
+     
+</ul>
+
+  
 
 <?php get_footer(); ?>

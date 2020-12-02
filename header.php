@@ -30,7 +30,7 @@
 	ph4-l justify-between center fixed items-center">
 
 		<a href="<?php echo get_site_url(); ?>" class="logo w-10-ns w-25 db">
-         <img src="<?php bloginfo('template_directory'); ?>/images/inventive_ventures_logo.png" class="db">
+         <img src="<?php bloginfo('template_directory'); ?>/images/inventive_ventures_logo_black.gif" class="db">
 		</a>
 		
 		<a class="nav-toggle w-10 db">
